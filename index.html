@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="light-theme">
+<head>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-rss/3.3.0/jquery.rss.min.js"></script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <center><title>Acabou de Acontecer - Portal ADA</title></center>
+  
+  <style>
+    /* Define um estilo para os links quando o cursor passa sobre eles */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Define um estilo para o botão "Alterar Tema" */
+#toggle-theme {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Define um estilo para a lista de notícias */
+#rss-feeds {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Define um estilo para o título de cada notícia */
+#rss-feeds li a {
+  font-weight: bold;
+}
+
+/* Define um estilo para o corpo de cada notícia */
+#rss-feeds li {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Define um estilo para o rodapé */
+#footer {
+  background-color: #0066cc;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Define o estilo para o tema claro */
+.light-theme {
+  background-color: white;
+  color: black;
+}
+
+/* Define o estilo para o tema escuro */
+.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+/* Define o estilo para o corpo com o tema escuro */
+body.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+ .light-theme {
+      background-color: white;
+      color: black;
+    }
+
+    .dark-theme {
+      background-color: black;
+      color: white;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="header">
+    <center><h1>Acabou de Acontecer - Portal ADA</h1></center>
+    <center><p>O seu portal favorito está aqui!!!</p></center>
+    <center><button id="toggle-theme">🌞</button></center>
+  </div>
+  
+  <div id="rss-feeds"></div>
+
+  <script>
+    $('#rss-feeds').rss('https://g1.globo.com/rss/g1/', {
+      limit: 10,
+      ssl: true,
+      entryTemplate: '<li><a href="{url}">{title}</a><br/>{shortBodyPlain}</li>'
+    });
+
+    const toggleButton = document.getElementById('toggle-theme');
+
+    toggleButton.addEventListener('click', () => {
+      const html = document.getElementsByTagName('html')[0];
+  
+      html.classList.toggle('light-theme');
+      html.classList.toggle('dark-theme');
+    });
+
+  </script>
+</body>
+</html>
