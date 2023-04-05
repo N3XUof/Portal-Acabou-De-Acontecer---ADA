@@ -19,29 +19,29 @@ a:hover {
 
 /* Define um estilo para o botão "Alterar Tema" */
 #toggle-theme {
-  background-color: #000000;
+  background-color: rgb(0, 123, 255);
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 15px;
+  padding: 15px;
   cursor: pointer;
 }
 
 /* Define um estilo para a lista de notícias */
 #rss-feeds {
-  max-width: 800px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 
 /* Define um estilo para o título de cada notícia */
 #rss-feeds li a {
-  font-weight: bold;
+  font-weight: arial;
 }
 
 /* Define um estilo para o corpo de cada notícia */
 #rss-feeds li {
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 /* Define um estilo para o rodapé */
@@ -72,25 +72,49 @@ body.dark-theme {
 }
 
  .light-theme {
-      background-color: white;
-      color: black;
+      background-color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
     }
 
     .dark-theme {
-      background-color: black;
-      color: white;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
     }
 
+    .box {
+      width: 1331px;
+      height: 80px;
+      background-color: #000000;
+      background-image: linear-gradient(#000001,#00000063),url(O\ seu\ portal\ online.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-width: 100vh;
+    }
+
+    .borda-com-logo{
+      border: 50px solid #000;
+      background-image: url(O\ seu\ portal\ online.png);
+      background-size: 400px 49px;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 10px;
+    }
 
   </style>
 </head>
 <body>
+  <div class="borda-com-logo"></div>
+
+
   <div id="header">
     <center><h1>Acabou de Acontecer - Portal ADA</h1></center>
-    <center><p>O seu portal favorito está aqui!!!</p></center>
+    <center><h3>O seu portal favorito está aqui!!!</h3></center>
     <center><button id="toggle-theme">🌞</button></center>
   </div>
   
+
+
   <div id="rss-feeds"></div>
 
   <script>
